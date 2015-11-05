@@ -82,6 +82,12 @@ new Vue({
         removeTask: function(task) {
             this.tasks.$remove(task);
 
+        },
+
+        clearCompleted: function() {
+            this.tasks = this.tasks.filter(function(task) {
+                return ! task.completed;
+            });
         }
     }
 })
