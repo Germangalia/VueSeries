@@ -13,7 +13,7 @@ new Vue({
     },
 
     methods: {
-        addTask: function(e) {
+        addTask: function (e) {
             e.preventDefault();
 
             this.tasks.push({
@@ -24,6 +24,23 @@ new Vue({
             this.newTask = '';
 
         },
+
+        editTask: function(task) {
+            //remove the task
+            this.removeTask(task);
+            //update the newTask input.
+            this.newTask = task.body;
+
+            //focus the newTask input
+            this.$$.newTask.focus();
+
+        },
+
+        completeTask: function(task) {
+            task.completed=true;
+        },
+
+
         removeTask: function(task) {
             this.tasks.$remove(task);
 

@@ -22,9 +22,11 @@
                     <li v-repeat="task: tasks"
                         class="list-goup-item">
 
-                        {{ task.body }}
+                        <span v-on="dbclick: editTask(task)">{{ task.body }}</span>
 
                         <button v-on="click: removeTask(task)">&#10007;</button>
+
+                        <button v-on="click: completeTask">&#10004;</button>
 
                     </li>
                 </ol>
@@ -35,6 +37,7 @@
 
                 <div class="form-group">
                     <input  v-model="newTask"
+                            v-el="newTask"
                             class="form-control"
                             placeholder="I need to ...">
 
