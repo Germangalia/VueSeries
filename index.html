@@ -11,11 +11,31 @@
     <div class="container">
         <div id="tasks">
 
-            <div>Tasks</div>
+            <div>
 
-            <ol class="list-goup">
-                <li v-repeat="tasks">{{ $value }}</li>
-            </ol>
+                <h10>Tasks</h10>
+
+                <ol class="list-goup">
+                    <li v-repeat="task: tasks"
+                        class="list-goup-item">
+                        {{ task.body }}</li>
+                </ol>
+
+            </div>
+
+            <form v-on="submit: addTask">
+
+                <div class="form-group">
+                    <input  v-model="newTask"
+                            class="form-control"
+                            placeholder="I need to ..."><input>
+
+                </div>
+
+                <button class="btn btn-primary">Add Task</button>
+
+            </form>
+
 
         </div>
     </div>
