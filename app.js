@@ -9,12 +9,23 @@ new Vue({
 
             { body: 'Go to the store', completed: false}
         ],
-        newTask: 'foobar'
+        newTask: ''
     },
 
     methods: {
-        addTask: function() {
-            alert(this.newTask);
+        addTask: function(e) {
+            e.preventDefault();
+
+            this.tasks.push({
+                body: this.newTask,
+                completed: false
+            });
+
+            this.newTask = '';
+
+        },
+        removeTask: function(task) {
+            this.tasks.$remove(task);
 
         }
     }

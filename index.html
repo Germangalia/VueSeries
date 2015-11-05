@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="app.css">
+
 </head>
 <body>
 
@@ -13,12 +16,17 @@
 
             <div>
 
-                <h10>Tasks</h10>
+                <h1>Tasks ({{tasks.length}})</h1>
 
                 <ol class="list-goup">
                     <li v-repeat="task: tasks"
                         class="list-goup-item">
-                        {{ task.body }}</li>
+
+                        {{ task.body }}
+
+                        <button v-on="click: removeTask(task)">&#10007;</button>
+
+                    </li>
                 </ol>
 
             </div>
@@ -28,7 +36,7 @@
                 <div class="form-group">
                     <input  v-model="newTask"
                             class="form-control"
-                            placeholder="I need to ..."><input>
+                            placeholder="I need to ...">
 
                 </div>
 
