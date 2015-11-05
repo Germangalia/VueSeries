@@ -10,9 +10,12 @@
 
     <div class="container">
         <div id="tasks">
-            {{ heading}}
 
-            <input v-model="heading">
+            <div>Tasks</div>
+
+            <ol class="list-goup">
+                <li v-repeat="tasks">{{ $value }}</li>
+            </ol>
 
         </div>
     </div>

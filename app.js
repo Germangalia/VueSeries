@@ -5,6 +5,6 @@ new Vue({
     el: '#tasks',
 
     data: {
-        heading: 'Hello World'
+        tasks: ['one', 'two', 'three']
     }
 })
