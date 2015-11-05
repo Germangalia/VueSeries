@@ -12,6 +12,23 @@ new Vue({
         newTask: ''
     },
 
+    computed: {
+        comoletions: function() {
+            return this.tasks.filter(function(task) {
+                return task.completed;
+            });
+        }
+    },
+
+    remaining: function() {
+        comoletions: function() {
+            return this.tasks.filter(function(task) {
+                return ! task.completed;
+            });
+        }
+
+    },
+
     infilters: {
 
         inProcess: function(tasks) {

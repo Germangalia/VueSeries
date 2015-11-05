@@ -16,7 +16,7 @@
 
             <div>
 
-                <h1>Tasks ({{tasks.length}})</h1>
+                <h1>Tasks ({{remaining.length}})</h1>
 
                 <ol class="list-goup">
                     <li v-repeat="task: tasks | inProcess"
@@ -47,13 +47,15 @@
 
             </form>
 
-            <div>
+            <div v-if="completions.length">
 
-                <h2>Completed</h2>
+                <h2>Completed {{{ completions.length</h2>
 
                 <ol class="list-group">
 
-                    <li v-repeat="task: tasks">
+                    <li v-repeat="task: tasks | filterBy true in completed"
+                            class="list-group-item"
+                            >
                         {{ task.body }}
                     </li>
                 </ol>
