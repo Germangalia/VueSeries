@@ -5,10 +5,7 @@ new Vue({
     el: '#tasks',
 
     data: {
-        tasks: [
-
-            { body: 'Go to the store', completed: false}
-        ],
+        tasks: [],
         newTask: ''
     },
 
@@ -20,12 +17,19 @@ new Vue({
         }
     },
 
+    comoletions: function() {
+            return this.tasks.filter(function(task) {
+                return task.completed;
+            });
+
+
+    },
+
     remaining: function() {
-        comoletions: function() {
             return this.tasks.filter(function(task) {
                 return ! task.completed;
             });
-        }
+
 
     },
 
@@ -64,8 +68,8 @@ new Vue({
 
         },
 
-        completeTask: function(task) {
-            task.completed=true;
+        toggñeTaskCompletion: function(task) {
+            task.completed= ! task.completed;
         },
 
         completeAll: function() {

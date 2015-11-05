@@ -44,7 +44,7 @@
                 </div>
 
                 <button class="btn btn-primary">Add Task</button>
-                <button cv-on="click: completeAll" class=btn btn-default">Mark All As Completed?</button>
+                <button cv-on="click: completeAll" class="btn btn-default">Mark All As Completed?</button>
 
             </form>
 
@@ -58,6 +58,8 @@
                             class="list-group-item"
                             >
                         {{ task.body }}
+
+                        <button v-on="click: toggleTaskCompletion(task)">&#10007;</button>
                     </li>
                 </ol>
             </div>
