@@ -19,7 +19,7 @@
                 <h1>Tasks ({{tasks.length}})</h1>
 
                 <ol class="list-goup">
-                    <li v-repeat="task: tasks"
+                    <li v-repeat="task: tasks | inProcess"
                         class="list-goup-item">
 
                         <span v-on="dbclick: editTask(task)">{{ task.body }}</span>
@@ -47,7 +47,17 @@
 
             </form>
 
-            <pre>{{ $data | json }}</pre>
+            <div>
+
+                <h2>Completed</h2>
+
+                <ol class="list-group">
+
+                    <li v-repeat="task: tasks">
+                        {{ task.body }}
+                    </li>
+                </ol>
+            </div>
 
 
         </div>

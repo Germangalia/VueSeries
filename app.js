@@ -12,6 +12,15 @@ new Vue({
         newTask: ''
     },
 
+    infilters: {
+
+        inProcess: function(tasks) {
+            return tasks.filter(function(task) {
+                return ! task.completed;
+            });
+        }
+    },
+
     methods: {
         addTask: function (e) {
             e.preventDefault();
