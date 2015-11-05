@@ -42,6 +42,8 @@ new Vue({
         addTask: function (e) {
             e.preventDefault();
 
+            if (! this.newTask) return;
+
             this.tasks.push({
                 body: this.newTask,
                 completed: false
@@ -64,6 +66,12 @@ new Vue({
 
         completeTask: function(task) {
             task.completed=true;
+        },
+
+        completeAll: function() {
+            this.tasks.forEach(function(task) {
+                task.completed = true;
+            });
         },
 
 
